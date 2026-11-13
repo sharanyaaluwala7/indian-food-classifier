@@ -1,0 +1,23 @@
+{
+  "models": [
+    {
+      "id": "food-classifier-final",
+      "arch": "mobilenetv3_large_100",
+      "mode": "linear_probe",
+      "weights": "food-classifier-final/model.pt",
+      "metrics": "food-classifier-final/metrics.json",
+      "sha256": "cbf414da8a8ae8bf4f451d17745fd96793b7aa083259072831c1ba710516a8e6",
+      "created_at": "2026-11-12T15:36:23.266235+00:00",
+      "dataset_id": "SohlHealth/enhanced-indian-food-classification",
+      "data_source": "hub",
+      "partial_training_subset": false,
+      "pretrained": true,
+      "headline": {
+        "internal_holdout_macro_f1_43": 0.8704637923810722,
+        "test_accuracy_open_set": 0.8352826510721247,
+        "test_macro_f1_open_set_22": 0.8632677623016548,
+        "test_accuracy_closed_set_22": 0.8635477582846004
+      }
+    }
+  ]
+}

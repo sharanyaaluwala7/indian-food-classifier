@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indian Food Classifier</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Indian food classifier</h1>
+  <nav aria-label="Sections">
+    <a href="#identify">Identify</a>
+    <a href="#models">Models</a>
+    <a href="#dataset">Dataset</a>
+  </nav>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<main>
+  <section id="identify" class="identify" aria-labelledby="h-identify">
+    <h2 id="h-identify" class="sr">Identify a dish</h2>
+
+    <div class="plate-col">
+      <label class="plate" id="plate" for="file" tabindex="0" aria-label="Choose or drop a food photo">
+        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-track" cx="60" cy="60" r="56"/>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="56" pathLength="100"/>
+        </svg>
+        <img id="preview" alt="" hidden>
+        <span class="plate-hint" id="plateHint">Drop a photo here<br><small>or click to choose one</small></span>
+      </label>
+      <input id="file" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+
+      <div class="controls">
+        <label for="modelSel">Model</label>
+        <select id="modelSel" disabled><option>No models available</option></select>
+        <button id="go" type="button" disabled>Identify dish</button>
+      </div>
+      <p class="fine">Photos are sent to this app only to be classified and are not saved. JPEG, PNG or WebP, up to 8 MB.</p>
+    </div>
+
+    <div class="result-col" aria-live="polite">
+      <div id="empty" class="empty">
+        <h3>Add a photo to begin</h3>
+        <p>The model picks from 43 dishes. It will always name one of them, so a photo of something else will still get an answer. Check the confidence and the evidence line.</p>
+      </div>
+      <div id="result" hidden></div>
+    </div>
+  </section>
+
+  <section id="models" aria-labelledby="h-models">
+    <h2 id="h-models">Models and measured results</h2>
+    <p class="lede">Every figure below was computed by <code>train.py</code> from the model's own predictions. If a model has not been trained, nothing appears here.</p>
+    <div id="modelsBody"></div>
+  </section>
+
+  <section id="dataset" aria-labelledby="h-dataset">
+    <h2 id="h-dataset">Dataset and licence</h2>
+    <div id="datasetBody"></div>
+  </section>
+</main>
+
+<footer>
+  <p id="attrib"></p>
+</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
